@@ -3,7 +3,13 @@ def initPlayers():
   PlayerList = []
 
 def createNewPlayer(name, damage=0, defensePower=0):
-
+  Player = dict(name = name,
+                score = 0,
+                damage = damage,
+                health = 100,
+                defensePower = defensePower,
+                defense = False)
+  PlayerList.append(Player)
 
 def addPlayer(player):
 
