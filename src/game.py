@@ -14,9 +14,14 @@ def createNewPlayer(name, damage = 0, defensePower = 0):
 def addPlayer(player):
   PlayerList.append(player)
 
-
 def removePlayer(name):
-
+  # If PlayerList contains name
+  for i in PlayerList:
+      if i["name"] == name:
+          PlayerList.remove(i)
+          return
+  # Else:
+  print("There is no player with that name!")
 
 def setPlayer(player, key, value):
 
