@@ -1,5 +1,6 @@
 def initPlayers():
-
+  global PlayerList
+  PlayerList = []
 
 def createNewPlayer(name, damage=0, defensePower=0):
 
