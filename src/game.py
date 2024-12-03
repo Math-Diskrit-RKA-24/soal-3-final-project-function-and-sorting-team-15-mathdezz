@@ -27,6 +27,7 @@ def removePlayer(name):
 
 def setPlayer(player, key, value):
     player[key] = value
+    return player
 
 def attackPlayer(attacker:dict, target:dict):
     if target['defense']:
