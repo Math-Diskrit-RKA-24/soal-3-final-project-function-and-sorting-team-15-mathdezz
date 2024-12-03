@@ -27,6 +27,7 @@ def removePlayer(name):
 
 def setPlayer(player, key, value):
     player[key] = value
+    return player
 
 def attackPlayer(attacker:dict, target:dict):
     if target['defense']:
@@ -65,6 +66,6 @@ print(f"Players that entered the game: {PlayerList}")
 
 attackPlayer(PlayerList[0], PlayerList[1]) # Zoro -> Luffy
 removePlayer("Pitty")
-addPlayer(setPlayer(createNewPlayer("Pitty", 10, 5), "defense", True))
+addPlayer(setPlayer(createNewPlayer("Pitty", 10, 5),"defense", True))
 attackPlayer(PlayerList[1], PlayerList[2]) # Luffy -> Pitty
 displayMatchResult()
