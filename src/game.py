@@ -34,7 +34,7 @@ def attackPlayer(attacker:dict, target:dict):
         damage_done = attacker['damage'] - target['defensePower']
         if damage_done < 0:
             damage_done = 0
-        score_increase = 0.8 if damage_done != 0 else 0
+        score_increase = round(1 - 1 / target["defensePower"],2)
     else:
         damage_done = attacker['damage']
         score_increase = 1
