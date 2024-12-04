@@ -31,13 +31,11 @@ def setPlayer(player, key, value):
 
 def attackPlayer(attacker:dict, target:dict):
     if target['defense']:
-        print(f"{attacker["name"]} attacking {target["name"]}, with {target["name"]} being defensive")
         damage_done = attacker['damage'] - target['defensePower']
         if damage_done < 0:
             damage_done = 0
-        score_increase = 0.8 if damage_done != 0 else 0
+        score_increase = round(1 - 1 / target["defensePower"],2)
     else:
-        print(f"{attacker["name"]} attacking {target["name"]}, without {target["name"]} being defensive")
         damage_done = attacker['damage']
         score_increase = 1
 
@@ -49,7 +47,6 @@ def attackPlayer(attacker:dict, target:dict):
         removePlayer(target)
     setPlayer(target, 'health', new_health)
     setPlayer(target, 'defense', False)
-    print(f"{attacker["name"]}'s score {score_increase} x {target["name"]}'s Health : {new_health}")
 
 def displayMatchResult():
     sorted_players = sorted(PlayerList, key=lambda p: (-p['score'], -p['health']))
