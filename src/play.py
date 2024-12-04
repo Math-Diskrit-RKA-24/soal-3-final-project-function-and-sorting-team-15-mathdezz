@@ -59,7 +59,9 @@ initPlayers()
 addPlayer(createNewPlayer("Zoro", 20, 10))
 addPlayer(createNewPlayer("Luffy", 50, 20))
 addPlayer(createNewPlayer("Pitty", 10, 5))
-print(f"Players that entered the game: {PlayerList}")
+print(f"Players that entered the game:")
+for i in PlayerList:
+    print(i,end="\n")
 
 attackPlayer(PlayerList[0], PlayerList[1]) # Zoro -> Luffy
 removePlayer("Pitty")
